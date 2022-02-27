@@ -2,7 +2,18 @@
     return (<h1>{course}</h1>)
   }
 
-  const Content = (part) => {
+
+  const Content = (props) =>{
+    return (
+      <div>
+      <Part part={props.p1} excercise ={props.e1}/>
+      <Part part={props.p2} excercise ={props.e2}/>
+      <Part part={props.p3} excercise ={props.e3}/>
+      </div>
+    )
+  }
+
+  const Part = (part) => {
     return (<p>{part} {excercise}</p>)
   }
 
@@ -23,9 +34,7 @@
     return (
       <div>
         <Header course={course} />
-        <Content part = {part1} excercise = {exercises1} />
-        <Content part = {part2} excercise = {exercises2} />
-        <Content part = {part3} excercise = {exercises3} />
+        <Content p1={part1} p2={part1} p3={part1} e1={exercises1} e2={exercises1} e3={exercises1}/>
         <Total ex1={exercises1} ex2={exercises2} ex3={exercises3}/>
       </div>
     )
